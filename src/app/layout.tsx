@@ -2,18 +2,10 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
-import { NavigationMenuDemo } from "@/components/navbar"
-import { cn } from "@/lib/utils";
+import { NavigationMenuDemo } from "@/components/navbar";
+import { Footer } from "@/components/footer";
+import CursorTorchEffectWrapper from "@/components/cursor-torch-effect";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   title: "Marmik Soni - Developer, Tech-Enthusiast",
@@ -28,21 +20,21 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head />
-      <body>
+      <body className="min-h-screen flex flex-col">
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange
         >
-
-          <div className="z-20 grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-10 font-[family-name:var(--font-geist-sans)]">
-
-            <NavigationMenuDemo />
-
-            {children}
+          {/* <CursorTorchEffectWrapper /> */}
+          <div className="flex-1">
+            <div className="z-20 flex flex-col justify-center items-center font-[family-name:var(--font-geist-sans)]">
+              <NavigationMenuDemo />
+              {children}
+            </div>
           </div>
-
+          <Footer />
         </ThemeProvider>
       </body>
     </html>

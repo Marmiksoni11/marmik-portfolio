@@ -41,6 +41,39 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+  --color-color-5: var(----color-5);
+  --color-color-4: var(----color-4);
+  --color-color-3: var(----color-3);
+  --color-color-2: var(----color-2);
+  --color-color-1: var(----color-1);
+
+  --animate-rainbow: rainbow var(--speed, 2s) infinite linear;
+
+  /* @keyframes rainbow {
+    0% {
+      background-position: 0%;
+    }
+
+    100% {
+      background-position: 200%;
+    }
+  } */
+
+  @keyframes rainbow {
+    0% {
+      background-position: 0% 50%;
+    }
+
+    50% {
+      background-position: 100% 50%;
+    }
+
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+
 }
 
 :root {
@@ -76,7 +109,18 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+
   --navbar-bg: oklch(0 0 0 / 30%);
+
+  --color-1: oklch(0.66 0.2247 25.86);
+
+  --color-2: oklch(0.6 0.2603 301.61);
+
+  --color-3: oklch(0.7 0.1646 251.44);
+
+  --color-4: oklch(0.8 0.1342 224.97);
+
+  --color-5: oklch(0.91 0.2309 132.91);
 
 }
 
@@ -114,7 +158,39 @@
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.439 0 0);
 
-  --navbar-bg: oklch(0 0 0 / 30%);
+  --navbar-bg: oklch(0.18 0 0 / 65.1%);
+
+  --color-1: oklch(0.66 0.2247 25.86);
+
+  --color-2: oklch(0.6 0.2603 301.61);
+
+  --color-3: oklch(0.7 0.1646 251.44);
+
+  --color-4: oklch(0.8 0.1342 224.97);
+
+  --color-5: oklch(0.91 0.2309 132.91);
+
+}
+
+.sticky-nav {
+  position: sticky;
+  z-index: 100;
+  top: 0px;
+}
+
+.sticky-profile {
+  position: sticky;
+  top: 135px;
+}
+
+.sticky-skills {
+  position: sticky;
+  top: 310px;
+}
+
+.blur-bg {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
 @layer base {
