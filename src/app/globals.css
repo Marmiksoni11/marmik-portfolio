@@ -122,6 +122,15 @@
 
   --color-5: oklch(0.91 0.2309 132.91);
 
+  --gradient-position-x: 62.5%;
+  --gradient-position-y: 50%;
+  --gradient-width: 25%;
+  --gradient-height: 25%;
+  --gradient-tilt: -45deg;
+  --gradient-color-start: #7c1a06;
+  --gradient-color-end: #00000000;
+
+
 }
 
 .dark {
@@ -170,6 +179,15 @@
 
   --color-5: oklch(0.91 0.2309 132.91);
 
+  --gradient-position-x: 62.5%;
+  --gradient-position-y: 50%;
+  --gradient-width: 25%;
+  --gradient-height: 25%;
+  --gradient-tilt: -45deg;
+  --gradient-color-start: #7c1a06;
+  --gradient-color-end: #00000000;
+
+
 }
 
 .sticky-nav {
@@ -201,4 +219,16 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+
+
+.Background_gradient {
+  background: radial-gradient(ellipse var(--gradient-width) var(--gradient-height) at var(--gradient-position-x) var(--gradient-position-y), var(--gradient-color-start), var(--gradient-color-end));
+  width: 400%;
+  height: 400%;
+  left: -150%;
+  top: -181%;
+  transform: rotate(var(--gradient-tilt));
+  transform-origin: center;
 }
