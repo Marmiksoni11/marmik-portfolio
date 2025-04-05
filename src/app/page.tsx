@@ -4,7 +4,6 @@ import { motion } from "framer-motion"
 import { TextAnimate } from "@/components/magicui/text-animate";
 import GradientButton from "@/components/ui/GradientButton";
 import { SkillsTextFlip } from "@/components/SkillsTextFlip";
-import { cn } from "@/lib/utils";
 
 export default function Home() {
   return (
@@ -49,7 +48,6 @@ export default function Home() {
           />
         </motion.div>
 
-
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -75,7 +73,6 @@ export default function Home() {
           className="text-lg mb-5 max-w-2xl text-muted-foreground"
         >
           I’ve honed my skills in building software using Tools like React.js, Next.js, Node.js. With extensive experience spanning various industries, including Pharmacy, Beauty, Travel and AI Agents.
-
         </motion.p>
 
         <motion.p

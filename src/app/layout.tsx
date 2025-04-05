@@ -6,7 +6,6 @@ import { NavigationMenuDemo } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import CursorTorchEffectWrapper from "@/components/cursor-torch-effect";
 
-
 export const metadata: Metadata = {
   title: "Marmik Soni - Developer, Tech-Enthusiast",
   description: "Marmik Soni - Developer Portfolio",
