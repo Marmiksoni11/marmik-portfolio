@@ -69,7 +69,7 @@ export default function Contact() {
     };
 
     return (
-        <div id="contact" className="z-55 mt-16 w-full max-w-4xl mx-auto pb-20">
+        <div id="contact" className="z-55 mt-16 w-full max-w-4xl mx-auto pb-20 px-2">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}

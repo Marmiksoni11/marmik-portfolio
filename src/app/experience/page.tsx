@@ -110,39 +110,39 @@ export default function Experience() {
   const { theme } = useTheme();
 
   return (
-    <div id="experience" className="relative z-50 mb-4 mt-10 max-w-4xl">
+    <div id="experience" className="relative z-50 mb-4 mt-10 max-w-4xl px-4 sm:px-6 md:px-0">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
-        <h2 className="text-4xl font-bold mb-10">
+        <h2 className="text-3xl md:text-4xl font-bold mb-6 md:mb-10">
           <span className="gradient-text">Professional Journey</span>
         </h2>
       </motion.div>
 
-      <div className="space-y-12 relative">
+      <div className="space-y-8 md:space-y-12 relative">
         {experiences.map((exp, index) => (
           <motion.div
             key={exp.company + "_" + index}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: index * 0.2 }}
-            className="group relative pl-8 border-l-[0.5px] border-muted-foreground dark:border-l-2 dark:border-muted"
+            className="group relative pl-6 md:pl-8 border-l-[0.5px] border-muted-foreground dark:border-l-2 dark:border-muted"
           >
             {/* Timeline dot */}
-            <div className="absolute w-4 h-4 bg-gradient-to-r from-purple-600 via-purple-500 to-blue-400 dark:from-emerald-700 dark:via-emerald-700 dark:to-emerald-800 rounded-full -left-[8px] dark:-left-[9px] top-0" />
+            <div className="absolute w-3 h-3 md:w-4 md:h-4 bg-gradient-to-r from-purple-600 via-purple-500 to-blue-400 dark:from-emerald-700 dark:via-emerald-700 dark:to-emerald-800 rounded-full -left-[6px] md:-left-[8px] dark:-left-[7px] md:dark:-left-[9px] top-0" />
 
             {/* Experience Header */}
-            <div className="flex flex-col md:flex-row justify-between mb-4">
-              <h3 className="text-2xl font-semibold mb-2 md:mb-0">{exp.role}</h3>
-              <p className="text-muted-foreground text-lg">{exp.duration}</p>
+            <div className="flex flex-col md:flex-row justify-between mb-2 md:mb-4">
+              <h3 className="text-xl md:text-2xl font-semibold mb-1 md:mb-0">{exp.role}</h3>
+              <p className="text-muted-foreground text-base md:text-lg">{exp.duration}</p>
             </div>
 
-            <h4 className="text-xl text-accent-foreground dark:text-muted-foreground mb-4">@ {exp.company}</h4>
+            <h4 className="text-lg md:text-xl text-accent-foreground dark:text-muted-foreground mb-3 md:mb-4">@ {exp.company}</h4>
 
             {/* Experience Description */}
-            <ul className="space-y-2 text-[var(--muted-foreground-2)] dark:text-muted-foreground mb-5">
+            <ul className="space-y-1 md:space-y-2 text-[var(--muted-foreground-2)] dark:text-muted-foreground text-sm md:text-base mb-4 md:mb-5">
               {exp.description.map((item, i) => (
                 <li
                   key={i}
@@ -158,20 +158,20 @@ export default function Experience() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.4 }}
-              className="flex flex-wrap gap-2 mb-4"
+              className="flex flex-wrap gap-1 md:gap-2 mb-3 md:mb-4"
             >
               {exp.skills.map((skill, skillIndex) => (
                 <span
                   key={skillIndex}
                   className={cn(
-                    "px-3 py-1 rounded-2xl border",
-                    "text-sm font-medium",
+                    "px-2 py-1 md:px-3 md:py-1 rounded-xl md:rounded-2xl border",
+                    "text-xs md:text-sm font-medium",
                     "border bg-slate-100 shadow-md dark:border dark:bg-[var(--navbar-bg)] backdrop-blur-[13px]",
                     "text-black/90 dark:text-white/90"
                   )}
                 >
                   {skill}
-                  <span className="absolute -bottom-0 left-[0.8rem] h-px w-[calc(100%-1.5rem)] bg-gradient-to-r from-emerald-400/0 via-purple-500 to-purple-500/0 dark:via-emerald-500/90  dark:to-emerald-500/0 transition-opacity duration-500 group-hover:opacity-40" />
+                  <span className="absolute -bottom-0 left-[0.6rem] md:left-[0.8rem] h-px w-[calc(100%-1.2rem)] md:w-[calc(100%-1.5rem)] bg-gradient-to-r from-emerald-400/0 via-purple-500 to-purple-500/0 dark:via-emerald-500/90 dark:to-emerald-500/0 transition-opacity duration-500 group-hover:opacity-40" />
                 </span>
               ))}
             </motion.div>
@@ -180,10 +180,10 @@ export default function Experience() {
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.3 }}
-              className="mb-6 mt-8"
+              className="mb-4 md:mb-6 mt-6 md:mt-8"
             >
-              <div className="flex items-center gap-3">
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-purple-500 to-blue-400 dark:from-emerald-600 dark:via-emerald-600 dark:to-emerald-700 text-lg font-semibold">
+              <div className="flex items-center gap-2 md:gap-3">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-purple-500 to-blue-400 dark:from-emerald-600 dark:via-emerald-600 dark:to-emerald-700 text-base md:text-lg font-semibold">
                   Featured Projects
                 </span>
                 <div className="h-px flex-1 bg-gradient-to-r from-purple-600/30 via-purple-500/30 to-blue-400/30 dark:from-emerald-400/30 dark:via-emerald-400/30 dark:to-emerald-600/30" />
@@ -192,7 +192,7 @@ export default function Experience() {
 
             {/* Projects Grid */}
             {exp.projects && exp.projects.length > 0 && (
-              <div className="flex flex-wrap gap-4 mb-12">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8 md:mb-12">
                 {exp.projects.map((project, projectIndex) => (
                   <motion.div
                     key={project.name}
@@ -200,18 +200,19 @@ export default function Experience() {
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ delay: 0.2 + projectIndex * 0.1 }}
                     whileHover={{ y: -5 }}
+                    className="w-full"
                   >
                   {theme === "dark" ? (
-                      <CardSpotlightDark className="h-full p-6 w-[423px]">
-                        <div className="space-y-4">
-                          <h3 className="text-lg font-bold text-primary">
+                      <CardSpotlightDark className="h-full p-4 md:p-6 w-full">
+                        <div className="space-y-3 md:space-y-4">
+                          <h3 className="text-base md:text-lg font-bold text-primary">
                             {project.name}
                           </h3>
-                          <ul className="space-y-2 pl-4">
+                          <ul className="space-y-1 md:space-y-2 pl-4">
                             {project.details.map((detail, i) => (
                               <li
                                 key={i}
-                                className="text-sm text-muted-foreground relative before:content-['•'] before:absolute before:-left-4 before:text-primary"
+                                className="text-xs md:text-sm text-muted-foreground relative before:content-['•'] before:absolute before:-left-4 before:text-primary"
                               >
                                 {detail}
                               </li>
@@ -220,16 +221,16 @@ export default function Experience() {
                         </div>
                       </CardSpotlightDark>
                     ) : (
-                      <CardSpotlight className="h-full p-6 w-[423px]">
-                        <div className="space-y-4">
-                          <h3 className="text-lg font-bold text-zinc-300">
+                      <CardSpotlight className="h-full p-4 md:p-6 w-full">
+                        <div className="space-y-3 md:space-y-4">
+                          <h3 className="text-base md:text-lg font-bold text-zinc-300">
                             {project.name}
                           </h3>
-                          <ul className="space-y-2 pl-4">
+                          <ul className="space-y-1 md:space-y-2 pl-4">
                             {project.details.map((detail, i) => (
                               <li
                                 key={i}
-                                className="text-sm text-zinc-400 relative before:content-['•'] before:absolute before:-left-4 before:text-zinc-300"
+                                className="text-xs md:text-sm text-zinc-400 relative before:content-['•'] before:absolute before:-left-4 before:text-zinc-300"
                               >
                                 {detail}
                               </li>

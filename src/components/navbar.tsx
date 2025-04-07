@@ -17,27 +17,28 @@ const navItems = [
   {
     name: "Home",
     link: "/",
-    icon: <Home className="h-5 w-5 mr-2 stroke-accent-foreground dark:stroke-slate-100" />, // Add icon
+    icon: <Home className="h-5 w-5 stroke-accent-foreground dark:stroke-slate-100" />, // Add icon
   },
   {
     name: "Experience",
     link: "/experience",
-    icon: <Briefcase className="h-5 w-5 mr-2 stroke-accent-foreground dark:stroke-slate-100" />, // Add icon
+    icon: <Briefcase className="h-5 w-5 stroke-accent-foreground dark:stroke-slate-100" />, // Add icon
   },
   {
     name: "Projects",
     link: "/projects",
-    icon: <Folder className="h-5 w-5 mr-2 stroke-accent-foreground dark:stroke-slate-100" />, // Add icon
+    icon: <Folder className="h-5 w-5 stroke-accent-foreground dark:stroke-slate-100" />, // Add icon
   },
   {
     name: "Contact Me",
     link: "/contact",
-    icon: <Contact className="h-5 w-5 mr-2 stroke-accent-foreground dark:stroke-slate-100" />, // Add icon
+    icon: <Contact className="h-5 w-5 stroke-accent-foreground dark:stroke-slate-100" />, // Add icon
   },
 ];
 
 export function NavigationMenuDemo() {
   const pathname = usePathname();
+
   return (
     <NavigationMenu className="sticky-nav flex justify-center items-center max-w-10xl w-full pt-5 pb-1 mb-0 mt-4 mx-auto backdrop-blur-md">
      <NavigationMenuList className="border-2 rounded-2xl p-1 bg-slate-100 shadow-md dark:bg-[var(--navbar-bg)] backdrop-blur-[12px] ">
@@ -52,7 +53,7 @@ export function NavigationMenuDemo() {
                   }`}
               >
                 {item.icon}
-                {item.name}
+                <span className="hidden md:inline ml-2">{item.name}</span>
               </NavigationMenuLink>
             </Link>
           </NavigationMenuItem>

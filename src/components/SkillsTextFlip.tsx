@@ -22,7 +22,7 @@ export function SkillsTextFlip() {
 
     return (
         <motion.div
-            className="sticky-skills flex flex-col mt-8 min-h-[200px] max-w-[180px] perspective-1000"
+            className="sticky-skills flex flex-col md:mt-8 md:min-h-[200px] max-w-[300px] md:max-w-[180px] perspective-1000"
             initial={{ opacity: 0, filter: "blur(12px)" }}
             animate={{ opacity: 1, filter: "blur(0px)" }}
             transition={{ duration: 1, ease: [0.4, 0, 0.2, 1] }}
@@ -31,17 +31,14 @@ export function SkillsTextFlip() {
                 <motion.div
                     key={activeGroupIndex}
                     initial={{
-                        // rotateX: 90,
                         opacity: 0,
                         filter: "blur(20px)"
                     }}
                     animate={{
-                        // rotateX: 0,
                         opacity: 1,
                         filter: "blur(0px)"
                     }}
                     exit={{
-                        // rotateX: -90,
                         opacity: 0,
                         filter: "blur(20px)"
                     }}
@@ -49,21 +46,16 @@ export function SkillsTextFlip() {
                         duration: 1,
                         ease: [0.4, 0, 0.2, 1]
                     }}
-                    className="flex flex-wrap gap-4 justify-center origin-center transform-style-preserve-3d"
+                    className="flex flex-wrap gap-2 md:gap-4 justify-center origin-center transform-style-preserve-3d"
                 >
                     {skillGroups[activeGroupIndex].map((skill, index) => (
-
                         <motion.div
                             key={skill}
                             className={cn(
-                                "px-4 py-1 rounded-3xl border w-max",
-                                "text-sm font-semibold",
-
-                                // "border-emerald-500/90",
-                                `border bg-slate-100 shadow-md dark:border dark:bg-[var(--navbar-bg)] backdrop-blur-[13px]`,
-
+                                "px-3 md:px-4 py-1 rounded-3xl border w-max",
+                                "text-xs md:text-sm font-semibold",
+                                "border bg-slate-100 shadow-md dark:border dark:bg-[var(--navbar-bg)] backdrop-blur-[13px]",
                                 "text-black/90 dark:text-white/90"
-
                             )}
                             initial={{
                                 scale: 0.8,
@@ -81,13 +73,8 @@ export function SkillsTextFlip() {
                                 ease: "backOut"
                             }}
                         >
-
-                            {/* <span className="absolute -top-0 left-[1.125rem] h-px w-[calc(100%-1.5rem)] bg-gradient-to-r from-emerald-400/0 via-purple-500 to-purple-500/0 dark:via-emerald-500/90  dark:to-emerald-500/0 transition-opacity duration-500 group-hover:opacity-40" /> */}
-
-                            <span className="absolute -bottom-0 left-[0.8rem] h-px w-[calc(100%-1.5rem)] bg-gradient-to-r from-emerald-400/0 via-purple-500 to-purple-500/0 dark:via-emerald-500/90  dark:to-emerald-500/0 transition-opacity duration-500 group-hover:opacity-40" />
-                          
+                            <span className="absolute -bottom-0 left-[0.8rem] h-px w-[calc(100%-1.5rem)] bg-gradient-to-r from-emerald-400/0 via-purple-500 to-purple-500/0 dark:via-emerald-500/90 dark:to-emerald-500/0 transition-opacity duration-500 group-hover:opacity-40" />
                             {skill}
-
                         </motion.div>
                     ))}
                 </motion.div>
