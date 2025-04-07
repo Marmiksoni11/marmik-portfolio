@@ -24,7 +24,7 @@ export default function Contact() {
         submitted: false
     });
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         setFormState({ ...formState, submitting: true });
 
@@ -61,7 +61,7 @@ export default function Contact() {
         }
     };
 
-    const handleChange = (e) => {
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         setFormState({
             ...formState,
             [e.target.name]: e.target.value
