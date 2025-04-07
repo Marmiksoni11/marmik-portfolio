@@ -81,11 +81,11 @@ export function Footer() {
                     </a>
 
                     <a
-                        href="https://github.com/Marmiksoni11"
+                        href="https://x.com/MarmikSoni11"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-muted-foreground hover:text-primary transition-colors"
-                        aria-label="Email"
+                        aria-label="twitter"
                     >
                         <FaXTwitter className="h-5 w-5" />
                     </a>

@@ -9,6 +9,9 @@ import CursorTorchEffectWrapper from "@/components/cursor-torch-effect";
 export const metadata: Metadata = {
   title: "Marmik Soni - Developer, Tech-Enthusiast",
   description: "Marmik Soni - Developer Portfolio",
+  icons: {
+    icon: "/favicon.ico"
+  },
 };
 
 export default function RootLayout({
@@ -26,7 +29,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {/* <CursorTorchEffectWrapper /> */}
+          <CursorTorchEffectWrapper /> 
           <div className="flex-1">
             <div className="z-20 flex flex-col justify-center items-center font-[family-name:var(--font-geist-sans)]">
               <NavigationMenuDemo />

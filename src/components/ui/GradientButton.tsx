@@ -34,7 +34,7 @@ const GradientButton: React.FC<GradientButtonProps> = ({
       <span className="inline-flex w-full cursor-pointer items-center justify-center rounded-lg bg-background px-4 py-0 text-sm font-medium text-white backdrop-blur-3xl transition-colors duration-300 hover:bg-transparent hover:text-white">
         {/* <span className="inline-flex w-full cursor-pointer items-center justify-center rounded-lg bg-transparent px-4 py-0 text-sm font-bold font-stretch-75% text-white backdrop-blur-3xl transition-colors duration-300 hover:bg-slate-950 hover:text-white"> */}
         {/* <span className="inline-flex w-full cursor-pointer items-center justify-center rounded-lg bg-transparent px-4 py-0 text-sm font-bold font-stretch-75% text-white backdrop-blur-3xl transition-colors duration-300 hover:bg-black hover:text-white backdrop-brightness-50 [text-shadow:0_1px_2px_rgba(0,0,0,0.5)]"> */}
-        <a href="#contact" className="flex items-center justify-center">
+        <a href={href} target={"_blank"} className="flex items-center justify-center">
           <span className="mt-[-4.5px]">{text}</span>
           {icon}
         </a>

@@ -49,6 +49,7 @@
 
   --animate-rainbow: rainbow var(--speed, 2s) infinite linear;
 
+
   /* @keyframes rainbow {
     0% {
       background-position: 0%;
@@ -130,7 +131,7 @@
   --gradient-color-start: #7c1a06;
   --gradient-color-end: #00000000;
 
-
+  --red-card-bg: oklch(0 0 0 / 0.57);
 }
 
 .dark {
@@ -187,7 +188,7 @@
   --gradient-color-start: #7c1a06;
   --gradient-color-end: #00000000;
 
-
+  --red-card-bg: oklch(0 0 0 / 0.57);
 }
 
 .sticky-nav {
@@ -228,7 +229,7 @@
   width: 400%;
   height: 400%;
   left: -150%;
-  top: -181%;
+  top: -170%;
   transform: rotate(var(--gradient-tilt));
   transform-origin: center;
 }

@@ -26,8 +26,21 @@ export default function Contact() {
         e.preventDefault();
         setFormState({ ...formState, submitting: true });
 
-        // Simulate form submission
-        setTimeout(() => {
+        try {
+            const response = await fetch('/api/send', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    name: formState.name,
+                    email: formState.email,
+                    message: formState.message,
+                }),
+            });
+
+            if (!response.ok) throw new Error('Failed to send message');
+
             setFormState({
                 name: "",
                 email: "",
@@ -36,11 +49,14 @@ export default function Contact() {
                 submitted: true
             });
 
-            // Reset submitted state after 3 seconds
             setTimeout(() => {
                 setFormState(prev => ({ ...prev, submitted: false }));
             }, 3000);
-        }, 1000);
+        } catch (error) {
+            console.error('Submission error:', error);
+            setFormState(prev => ({ ...prev, submitting: false }));
+            alert('Failed to send message. Please try again.');
+        }
     };
 
     const handleChange = (e) => {
@@ -87,7 +103,9 @@ export default function Contact() {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: 0.3 }}
-                    className="relative p-6 rounded-lg border overflow-hidden"
+                    className="relative p-6 rounded-lg border overflow-hidden 
+                    dark:bg-[var(--red-card-bg)] 
+                    backdrop-blur-[12px]"
                 >
 
                     <GridPattern
@@ -176,7 +194,7 @@ export default function Contact() {
                         <p className="text-muted-foreground mb-4">Ready to bring your ideas to life with modern web technologies?</p>
                         <GradientButton
                             text="Schedule a Call"
-                            href="https://calendly.com/marmiksoni"
+                            href="https://cal.com/marmiksoni11"
                         />
                     </motion.div>
 
@@ -226,7 +244,7 @@ export default function Contact() {
                                 </a>
 
                                 <a
-                                    href="https://github.com/Marmiksoni11"
+                                    href="https://x.com/MarmikSoni11"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="text-muted-foreground hover:text-primary transition-colors"

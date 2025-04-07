@@ -56,18 +56,24 @@ export default function Projects() {
 
             <div
                 className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12"
-
             >
                 {projects.map((project, index) => (
                     <motion.div
                         initial={{ opacity: 0, filter: "blur(12px)" }}
                         animate={{ opacity: 1, filter: "blur(0px)" }}
                         transition={{ duration: 1, ease: [0.4, 0, 0.2, 1], delay: index * 0.15 }
-                    }
-                        key={index} 
+                        }
+                        key={index}
                     >
-                        <Card key={index} className="relative overflow-hidden bg-transparent flex flex-col justify-between">
-
+                        <Card key={index} className="
+                        relative 
+                        overflow-hidden 
+                        dark:bg-[var(--red-card-bg)] 
+                        backdrop-blur-[12px]
+                        flex 
+                        flex-col 
+                        justify-between
+                        ">
                             <GridPattern
                                 width={30}
                                 height={30}
@@ -77,11 +83,9 @@ export default function Projects() {
                                     "[mask-image:linear-gradient(to_bottom_left,white,transparent,transparent)]",
                                 )}
                             />
-
                             <div
-                                className="absolute inset-0 opacity-80 Background_gradient"
+                                className="absolute inset-0 opacity-100 Background_gradient"
                             />
-
                             <CardHeader>
                                 <CardTitle className="z-55 text-2xl font-bold text-slate-100">
                                     {project.title}

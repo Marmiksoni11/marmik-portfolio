@@ -44,7 +44,7 @@ export default function Home() {
         >
           <GradientButton
             text="Let's discuss your project"
-            href="#contact"
+            href="https://cal.com/marmiksoni11"
           />
         </motion.div>
 
