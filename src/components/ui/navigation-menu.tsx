@@ -77,10 +77,19 @@ const navigationMenuTriggerStyle = cva(
   py-0.5
   text-sm 
   font-medium 
-  hover:bg-accent 
+  
+  hover:bg-slate-200
+  focus:bg-slate-200 
+  
+  dark:hover:bg-accent 
+  dark:focus:bg-accent 
+  
   hover:text-accent-foreground 
-  focus:bg-accent 
   focus:text-accent-foreground 
+  
+  dark:hover:text-accent-foreground 
+  dark:focus:text-accent-foreground 
+  
   disabled:pointer-events-none 
   disabled:opacity-50 
   data-[state=open]:hover:bg-accent 

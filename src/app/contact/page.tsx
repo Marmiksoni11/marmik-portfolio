@@ -12,8 +12,10 @@ import { Textarea } from "@/components/ui/textarea";
 import { GridPattern } from "@/components/magicui/grid-pattern";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { useTheme } from "next-themes";
 
 export default function Contact() {
+    const { theme } = useTheme();
     const [formState, setFormState] = useState({
         name: "",
         email: "",
@@ -108,25 +110,28 @@ export default function Contact() {
                     backdrop-blur-[12px]"
                 >
 
-                    <GridPattern
-                        width={30}
-                        height={30}
-                        x={-1}
-                        y={-1}
-                        className={cn(
-                            "[mask-image:linear-gradient(to_bottom_left,white,transparent,transparent)]",
-                        )}
-                    />
 
-                    <div
-                        className="absolute inset-0 opacity-80 Background_gradient"
-                    />
+                    {theme === "dark" ? (
+                        <>
+                            <GridPattern
+                                width={30}
+                                height={30}
+                                x={-1}
+                                y={-1}
+                                className={cn(
+                                    "[mask-image:linear-gradient(to_bottom_left,white,transparent,transparent)]",
+                                )}
+                            />
+                            <div
+                                className="absolute inset-0 opacity-80 Background_gradient"
+                            />
+                        </>) : (<></>)}
 
                     <h3 className="text-xl font-semibold mb-4 relative z-56">Send a Message</h3>
 
                     <form onSubmit={handleSubmit} className="relative z-56 space-y-4">
                         <div className="relative z-56" >
-                            <label htmlFor="name" className="z-56 block text-sm font-medium mb-1 text-muted-foreground">Name</label>
+                            <label htmlFor="name" className="z-56 block text-sm font-medium mb-1 text-zinc-700 dark:text-muted-foreground">Name</label>
                             <Input
                                 id="name"
                                 name="name"
@@ -139,7 +144,7 @@ export default function Contact() {
                         </div>
 
                         <div>
-                            <label htmlFor="email" className="block text-sm font-medium mb-1 text-muted-foreground">Email</label>
+                            <label htmlFor="email" className="block text-sm font-medium mb-1 text-zinc-700 dark:text-muted-foreground">Email</label>
                             <Input
                                 id="email"
                                 name="email"
@@ -153,7 +158,7 @@ export default function Contact() {
                         </div>
 
                         <div>
-                            <label htmlFor="message" className="block text-sm font-medium mb-1 text-muted-foreground">Message</label>
+                            <label htmlFor="message" className="block text-sm font-medium mb-1 text-zinc-700 dark:text-muted-foreground">Message</label>
                             <Textarea
                                 id="message"
                                 name="message"
@@ -168,6 +173,7 @@ export default function Contact() {
                         <Button
                             type="submit"
                             disabled={formState.submitting}
+                            className="cursor-pointer"
 
                         >
                             {formState.submitting ? 'Sending...' : formState.submitted ? 'Message Sent!' : 'Send Message'}

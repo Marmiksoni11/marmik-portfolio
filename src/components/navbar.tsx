@@ -47,7 +47,7 @@ export function NavigationMenuDemo() {
             <Link href={item.link} legacyBehavior passHref>
               <NavigationMenuLink
                 className={`${navigationMenuTriggerStyle()} flex items-center flex-row ${pathname === `${item.link}`
-                  ? "bg-accent text-accent-foreground"
+                  ? "text-accent-foreground bg-slate-200 dark:bg-accent"
                   : ""
                   }`}
               >

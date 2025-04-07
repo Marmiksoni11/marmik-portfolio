@@ -91,6 +91,7 @@
   --secondary-foreground: oklch(0.205 0 0);
   --muted: oklch(0.97 0 0);
   --muted-foreground: oklch(0.556 0 0);
+  --muted-foreground-2: oklch(0.49 0 0);
   --accent: oklch(0.97 0 0);
   --accent-foreground: oklch(0.205 0 0);
   --destructive: oklch(0.577 0.245 27.325);
@@ -128,7 +129,9 @@
   --gradient-width: 25%;
   --gradient-height: 25%;
   --gradient-tilt: -45deg;
-  --gradient-color-start: #7c1a06;
+  
+  /* --gradient-color-start: #40067c; */
+  --gradient-color-start: #54067c;
   --gradient-color-end: #00000000;
 
   --red-card-bg: oklch(0 0 0 / 0.57);

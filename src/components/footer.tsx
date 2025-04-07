@@ -22,7 +22,7 @@ export function Footer() {
     return (
         <footer className="z-52 flex flex-col justify-center items-start max-w-4xl mx-auto w-full mb-5">
 
-            <hr className="w-full border border-gray-200 dark:gray-300 mb-5" />
+            <hr className="w-full border border-gray-400 dark:gray-300 mb-5" />
 
             <div className="flex w-full justify-between items-center">
 
@@ -41,7 +41,7 @@ export function Footer() {
                     >
                         <FiArrowUp className="h-5 w-5" />
                     </Button>
-                    <p className="text-sm text-gray-300">
+                    <p className="text-sm text-muted-foreground hover:text-foreground">
                         © {new Date().getFullYear()} Marmik Soni
                     </p>
                 </motion.div>

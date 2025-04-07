@@ -60,7 +60,7 @@ export function SkillsTextFlip() {
                                 "text-sm font-semibold",
 
                                 // "border-emerald-500/90",
-                                "border dark:border dark:bg-[var(--navbar-bg)] backdrop-blur-[13px]",
+                                `border bg-slate-100 shadow-md dark:border dark:bg-[var(--navbar-bg)] backdrop-blur-[13px]`,
 
                                 "text-black/90 dark:text-white/90"
 

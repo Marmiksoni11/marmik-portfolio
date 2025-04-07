@@ -22,7 +22,7 @@ export default function Home() {
         <TextAnimate
           animation="blurIn"
           duration={1}
-          className="text-2xl md:text-2xl font-semibold mb-6 text-muted-foreground"
+          className="text-2xl md:text-2xl font-semibold mb-6 text-foreground"
         >
           Full Stack Developer
         </TextAnimate>

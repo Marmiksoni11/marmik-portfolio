@@ -87,7 +87,7 @@ export default function Projects() {
                                 className="absolute inset-0 opacity-100 Background_gradient"
                             />
                             <CardHeader>
-                                <CardTitle className="z-55 text-2xl font-bold text-slate-100">
+                                <CardTitle className="z-55 text-2xl font-bold text-zinc-900 dark:text-slate-100">
                                     {project.title}
                                 </CardTitle>
                             </CardHeader>
@@ -95,7 +95,7 @@ export default function Projects() {
                             <CardContent>
                                 <div className="flex flex-wrap gap-2">
 
-                                    <CardDescription className="z-55 text-slate-100 mb-4">
+                                    <CardDescription className="z-55 text-zinc-800 dark:text-slate-100 mb-4">
                                         {project.description}
                                     </CardDescription>
 
@@ -105,7 +105,7 @@ export default function Projects() {
                                             className={cn(
                                                 "px-3 py-1 rounded-2xl border",
                                                 "text-sm font-medium",
-                                                "border dark:border dark:bg-[var(--navbar-bg)] backdrop-blur-[13px]",
+                                                "border bg-slate-100/37 shadow-md dark:border dark:bg-[var(--navbar-bg)] backdrop-blur-[13px]",
                                                 "text-black/90 dark:text-white/90"
                                             )}
                                         >
@@ -121,7 +121,7 @@ export default function Projects() {
                                 >
                                     <a
                                         href={project.github}
-                                        className="cursor-pointer text-black"
+                                        className="cursor-pointer dark:text-black"
                                         target="_blank"
                                     >
                                         View Project

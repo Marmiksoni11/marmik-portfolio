@@ -4,6 +4,9 @@ import { motion } from "framer-motion";
 import { TextAnimate } from "@/components/magicui/text-animate";
 import { cn } from "@/lib/utils";
 import { CardSpotlight } from "@/components/ui/card-spotlight";
+import { CardSpotlightDark } from "@/components/card-spotlight-dark";
+import { useTheme } from "next-themes";
+
 
 const experiences = [
   {
@@ -104,6 +107,8 @@ const experiences = [
 
 
 export default function Experience() {
+  const { theme } = useTheme();
+
   return (
     <div id="experience" className="relative z-50 mb-4 mt-10 max-w-4xl">
       <motion.div
@@ -123,12 +128,10 @@ export default function Experience() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: index * 0.2 }}
-            className="group relative pl-8 border-l-2 border-muted"
+            className="group relative pl-8 border-l-[0.5px] border-muted-foreground dark:border-l-2 dark:border-muted"
           >
-            {/* Purple Timeline dot */}
-            {/* <div className="absolute w-4 h-4 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full -left-[9px] top-0" /> */}
-
-            <div className="absolute w-4 h-4 bg-gradient-to-r from-emerald-700 to-emerald-800 rounded-full -left-[9px] top-0" />
+            {/* Timeline dot */}
+            <div className="absolute w-4 h-4 bg-gradient-to-r from-purple-600 via-purple-500 to-blue-400 dark:from-emerald-700 dark:via-emerald-700 dark:to-emerald-800 rounded-full -left-[8px] dark:-left-[9px] top-0" />
 
             {/* Experience Header */}
             <div className="flex flex-col md:flex-row justify-between mb-4">
@@ -136,10 +139,10 @@ export default function Experience() {
               <p className="text-muted-foreground text-lg">{exp.duration}</p>
             </div>
 
-            <h4 className="text-xl text-muted-foreground mb-4">@ {exp.company}</h4>
+            <h4 className="text-xl text-accent-foreground dark:text-muted-foreground mb-4">@ {exp.company}</h4>
 
             {/* Experience Description */}
-            <ul className="space-y-2 text-muted-foreground mb-5">
+            <ul className="space-y-2 text-[var(--muted-foreground-2)] dark:text-muted-foreground mb-5">
               {exp.description.map((item, i) => (
                 <li
                   key={i}
@@ -151,7 +154,7 @@ export default function Experience() {
             </ul>
 
             {/* Skills */}
-           <motion.div
+            <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.4 }}
@@ -163,31 +166,15 @@ export default function Experience() {
                   className={cn(
                     "px-3 py-1 rounded-2xl border",
                     "text-sm font-medium",
-                    "border dark:border dark:bg-[var(--navbar-bg)] backdrop-blur-[13px]",
+                    "border bg-slate-100 shadow-md dark:border dark:bg-[var(--navbar-bg)] backdrop-blur-[13px]",
                     "text-black/90 dark:text-white/90"
                   )}
                 >
                   {skill}
-                   <span className="absolute -bottom-0 left-[0.8rem] h-px w-[calc(100%-1.5rem)] bg-gradient-to-r from-emerald-400/0 via-purple-500 to-purple-500/0 dark:via-emerald-500/90  dark:to-emerald-500/0 transition-opacity duration-500 group-hover:opacity-40" />
+                  <span className="absolute -bottom-0 left-[0.8rem] h-px w-[calc(100%-1.5rem)] bg-gradient-to-r from-emerald-400/0 via-purple-500 to-purple-500/0 dark:via-emerald-500/90  dark:to-emerald-500/0 transition-opacity duration-500 group-hover:opacity-40" />
                 </span>
               ))}
             </motion.div>
-         
-
-            {/* Purple Featured Projects */}
-            {/* <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.3 }}
-              className="mb-6 mt-8"
-            >
-              <div className="flex items-center gap-3">
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-600 text-lg font-semibold">
-                  Featured Projects
-                </span>
-                <div className="h-px flex-1 bg-gradient-to-r from-blue-500/30 to-purple-600/30" />
-              </div>
-            </motion.div> */}
 
             <motion.div
               initial={{ opacity: 0, x: -20 }}
@@ -196,13 +183,12 @@ export default function Experience() {
               className="mb-6 mt-8"
             >
               <div className="flex items-center gap-3">
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-emerald-700 text-lg font-semibold">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-purple-500 to-blue-400 dark:from-emerald-600 dark:via-emerald-600 dark:to-emerald-700 text-lg font-semibold">
                   Featured Projects
                 </span>
-                <div className="h-px flex-1 bg-gradient-to-r from-emerald-400/30 to-emerald-600/30" />
+                <div className="h-px flex-1 bg-gradient-to-r from-purple-600/30 via-purple-500/30 to-blue-400/30 dark:from-emerald-400/30 dark:via-emerald-400/30 dark:to-emerald-600/30" />
               </div>
             </motion.div>
-
 
             {/* Projects Grid */}
             {exp.projects && exp.projects.length > 0 && (
@@ -215,23 +201,44 @@ export default function Experience() {
                     transition={{ delay: 0.2 + projectIndex * 0.1 }}
                     whileHover={{ y: -5 }}
                   >
-                    <CardSpotlight className="h-full p-6 w-[423px]">
-                      <div className="space-y-4">
-                        <h3 className="text-lg font-bold text-primary">
-                          {project.name}
-                        </h3>
-                        <ul className="space-y-2 pl-4">
-                          {project.details.map((detail, i) => (
-                            <li
-                              key={i}
-                              className="text-sm text-muted-foreground relative before:content-['•'] before:absolute before:-left-4 before:text-primary"
-                            >
-                              {detail}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    </CardSpotlight>
+                  {theme === "dark" ? (
+                      <CardSpotlightDark className="h-full p-6 w-[423px]">
+                        <div className="space-y-4">
+                          <h3 className="text-lg font-bold text-primary">
+                            {project.name}
+                          </h3>
+                          <ul className="space-y-2 pl-4">
+                            {project.details.map((detail, i) => (
+                              <li
+                                key={i}
+                                className="text-sm text-muted-foreground relative before:content-['•'] before:absolute before:-left-4 before:text-primary"
+                              >
+                                {detail}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      </CardSpotlightDark>
+                    ) : (
+                      <CardSpotlight className="h-full p-6 w-[423px]">
+                        <div className="space-y-4">
+                          <h3 className="text-lg font-bold text-zinc-300">
+                            {project.name}
+                          </h3>
+                          <ul className="space-y-2 pl-4">
+                            {project.details.map((detail, i) => (
+                              <li
+                                key={i}
+                                className="text-sm text-zinc-400 relative before:content-['•'] before:absolute before:-left-4 before:text-zinc-300"
+                              >
+                                {detail}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      </CardSpotlight>
+                    )
+                  }
                   </motion.div>
                 ))}
               </div>
