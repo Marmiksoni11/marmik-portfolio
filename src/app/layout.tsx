@@ -5,6 +5,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { NavigationMenuDemo } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import CursorTorchEffectWrapper from "@/components/cursor-torch-effect";
+import { Analytics } from '@vercel/analytics/next';
 
 export const metadata: Metadata = {
   title: "Marmik Soni - Developer, Tech-Enthusiast",
@@ -38,6 +39,7 @@ export default function RootLayout({
           </div>
           <Footer />
         </ThemeProvider>
+        <Analytics />
       </body>
     </html>
   );
