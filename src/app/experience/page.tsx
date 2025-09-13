@@ -6,9 +6,57 @@ import { cn } from "@/lib/utils";
 import { CardSpotlight } from "@/components/ui/card-spotlight";
 import { CardSpotlightDark } from "@/components/card-spotlight-dark";
 import { useTheme } from "next-themes";
+import { Button } from "@/components/ui/button";
+import { Download } from "lucide-react";
 
 
 const experiences = [
+  {
+    company: "Self",
+    role: "Freelance Developer",
+    duration: "Feb 2025 - Present",
+    skills: [
+      "Next.js",
+      "Tailwind CSS",
+      "Node.js",
+      "Twilio API",
+      "Eleven Labs API",
+      "GPT-4o",
+      "Python",
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "jQuery"
+    ],
+    description: [
+      "Led development for an Ahmedabad-based startup (Phlexibit), building an AI-powered calling agent leveraging Twilio, Eleven Labs (Hindi), Node.js, and GPT-4o for real-time conversations.",
+      "Developed a corporate task management platform where senior staff prompt LLM (GPT-4o) to assign customized tasks to team members, building the frontend interface from scratch.",
+      "Maintained and enhanced a real estate agency’s CRM dashboard frontend, adding new modules based on client requirements."
+    ],
+    projects: [
+      {
+        name: "AI Voice Calling Agent (Phlexibit)",
+        details: [
+          "Built an AI powered voice agent for handling potential leads using Twilio for call initiation and Eleven Labs API for Hindi-language voice conversations.",
+          "Integrated Node.js backend for calling logic and GPT-4o for processing real-time dialogues, enabling natural and automated customer interactions."
+        ]
+      },
+      {
+        name: "AI-Powered Corporate Task Management Platform (Phlexibit)",
+        details: [
+          "Engineered a system where senior staff prompt GPT-4o to create and assign customized tasks to junior members.",
+          "Developed the frontend UI from scratch using Next.js and Tailwind CSS for smooth task delegation workflows."
+        ]
+      },
+      {
+        name: "Real Estate CRM Dashboard",
+        details: [
+          "Maintained and extended a CRM dashboard for a real estate agency by adding new client-requested modules.",
+          "Improved frontend performance and usability using HTML, CSS, JavaScript, and jQuery."
+        ]
+      }
+    ]
+  },
   {
     company: "IIH Global Pvt. Ltd.",
     role: "Full-Stack Developer",
@@ -111,15 +159,33 @@ export default function Experience() {
 
   return (
     <div id="experience" className="relative z-50 mb-4 mt-10 max-w-4xl px-4 sm:px-6 md:px-0">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-      >
-        <h2 className="text-3xl md:text-4xl font-bold mb-6 md:mb-10">
-          <span className="gradient-text">Professional Journey</span>
-        </h2>
-      </motion.div>
+      <div className="flex items-center justify-between mb-6 md:mb-10">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          <h2 className="text-3xl md:text-4xl font-bold">
+            <span className="gradient-text">Professional Journey</span>
+          </h2>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, x: 20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5 }}
+          className="relative"
+        >
+          <Button
+            onClick={() => window.open('/Marmik_Soni_Resume_React.pdf', '_blank')}
+            className="flex items-center gap-2 border-2 rounded-2xl p-3 bg-slate-100 shadow-md dark:bg-[var(--navbar-bg)] backdrop-blur-[12px] text-accent-foreground hover:bg-slate-200 hover:dark:bg-accent cursor-pointer"
+          >
+            <Download size={16} />
+            Resume
+          </Button>
+          <span className="absolute -bottom-0 left-[1.125rem] h-px w-[calc(80%-1.25rem)] bg-gradient-to-r from-emerald-400/0 via-purple-500 to-purple-500/0 dark:via-emerald-500/90  dark:to-emerald-500/0 transition-opacity duration-500 group-hover:opacity-40 z-10" />
+        </motion.div>
+      </div>
 
       <div className="space-y-8 md:space-y-12 relative">
         {experiences.map((exp, index) => (
@@ -202,7 +268,7 @@ export default function Experience() {
                     whileHover={{ y: -5 }}
                     className="w-full"
                   >
-                  {theme === "dark" ? (
+                    {theme === "dark" ? (
                       <CardSpotlightDark className="h-full p-4 md:p-6 w-full">
                         <div className="space-y-3 md:space-y-4">
                           <h3 className="text-base md:text-lg font-bold text-primary">
@@ -239,7 +305,7 @@ export default function Experience() {
                         </div>
                       </CardSpotlight>
                     )
-                  }
+                    }
                   </motion.div>
                 ))}
               </div>

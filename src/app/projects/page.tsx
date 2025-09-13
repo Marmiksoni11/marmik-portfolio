@@ -20,6 +20,16 @@ export default function Projects() {
 
     const projects = [
         {
+            title: "Kinesis UI - OpenSource UI Library",
+            description:
+                `A curated suite of stunning, re-usable, motion sections and components. Copy, paste, and watch your interface come alive.
+                Built on top of ShadCN UI using Next, Tailwind CSS, and Motion (Formerly Framer Motion).
+                `,
+            technologies: ["Next.js", "TailwindCSS", "Framer Motion", "ShadCN UI", "TypeScript"],
+            github: "",
+            demo: "https://www.kinesisui.com"
+        },
+        {
             title: "YouTube Video Processor (FFmpeg & Node.js)",
             description:
                 "Developed a custom script using FFmpeg and Node.js to download and process YouTube videos. Integrated video conversion & compression, optimizing file sizes and formats.",
@@ -119,10 +129,11 @@ export default function Projects() {
                                 
                                 <CardFooter className="relative z-56 w-full px-4 sm:px-6 py-4 mt-auto">
                                     <Button
+                                        asChild
                                         className="w-full cursor-pointer transition-transform hover:scale-[1.02]"
                                     >
                                         <a
-                                            href={project.github}
+                                            href={project.demo}
                                             className="cursor-pointer dark:text-black w-full text-center"
                                             target="_blank"
                                             rel="noopener noreferrer"
